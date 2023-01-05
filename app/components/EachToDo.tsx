@@ -31,7 +31,7 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, artUpdateHandler }: 
         <button
           className="artButton"
           onClick={() => {
-            artUpdateHandler(toDoItem.art);
+            artUpdateHandler(toDoItem);
           }}
         >
           <Image
