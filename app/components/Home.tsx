@@ -118,6 +118,23 @@ const Home = () => {
         searchQuery();
       }
     });
+    };
+
+  const updateTodoItemArt = (item: TodoItem) => {
+    item.art = !item.art;
+    setIsLoading(true);
+
+    fetch('/api/item/' + item.id, {
+      method: 'PUT',
+      body: JSON.stringify(item)
+    }).then(() => {
+      setIsLoading(false);
+      if (viewMode == 'list') {
+        fetchListItems();
+      } else {
+        searchQuery();
+      }
+    });
   };
 
   // Search query
@@ -220,6 +237,7 @@ const Home = () => {
                     toDoItem={each}
                     deleteHandler={deleteTodoItem}
                     updateHandler={updateTodoItem}
+                    artUpdateHandler={updateTodoItemArt}
                   />
                 );
               })}
