@@ -27,19 +27,6 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler }: Props) => {
           />
           <span style={toDoItem.completed ? { textDecoration: 'line-through' } : {}}>{toDoItem.text}</span>
         </button>
-        /*<button
-          className="artButton"
-          onClick={() => {
-            updateHandler(toDoItem);
-          }}
-        >
-          <Image
-            src={toDoItem.completed ? '/circle-checked.svg' : '/circle.svg'}
-            width={20}
-            height={20}
-            alt="Check Image"
-          />
-        </button>*/
         <button
           className="deleteBtn"
           onClick={() => {
