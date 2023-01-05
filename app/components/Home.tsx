@@ -10,6 +10,9 @@ const Home = () => {
   // This is the input field
   const [textInput, setTextInput] = useState('');
 
+  // Archetype Input Field
+  const [archetypeInput, setArchetypeInput] = useState('');
+
   // Todo list array which displays the todo items
   const [todoList, setTodoList] = useState<TodoItem[]>([]);
 
@@ -70,10 +73,11 @@ const Home = () => {
 
     fetch('/api/items', {
       method: 'POST',
-      body: JSON.stringify({ text: textInput, completed: false })
+      body: JSON.stringify({ text: textInput, completed: false, archetype: archetypeInput })
     }).then(() => {
       setIsLoading(false);
       setTextInput('');
+      setArchetypeInput('');
       fetchListItems();
     });
   };
