@@ -10,7 +10,7 @@ type Props = {
   updateHandler: (item: TodoItem) => void;
   artUpdateHandler: (item: TodoItem["art"]) => true;
 };
-const EachTodo = ({ toDoItem, deleteHandler, updateHandler }: Props) => {
+const EachTodo = ({ toDoItem, deleteHandler, updateHandler, artUpdateHandler }: Props) => {
   return (
     <>
       <li className="each">
@@ -31,7 +31,7 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler }: Props) => {
         <button
           className="artButton"
           onClick={() => {
-            updateHandler(toDoItem);
+            artUpdateHandler(toDoItem);
           }}
         >
           <Image
