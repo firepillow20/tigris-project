@@ -8,7 +8,7 @@ type Props = {
   toDoItem: TodoItem;
   deleteHandler: (id?: number) => void;
   updateHandler: (item: TodoItem) => void;
-  artUpdateHandler: (item: TodoItem["art"]) => void;
+  artUpdateHandler: (item: TodoItem["art"]) => true;
 };
 const EachTodo = ({ toDoItem, deleteHandler, updateHandler, artUpdateHandler }: Props) => {
   return (
@@ -31,7 +31,7 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, artUpdateHandler }: 
         <button
           className="artButton"
           onClick={() => {
-            artUpdateHandler(toDoItem);
+            artUpdateHandler(toDoItem.art);
           }}
         >
           <Image
