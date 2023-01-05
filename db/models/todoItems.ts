@@ -12,5 +12,5 @@ export class TodoItem implements TigrisCollectionType {
   completed!: boolean;
 
   @Field()
-  art!: boolean;
+  status!: string;
 }
