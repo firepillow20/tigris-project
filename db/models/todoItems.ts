@@ -8,8 +8,8 @@ export class TodoItem implements TigrisCollectionType {
   @Field()
   text!: string;
 
-  @Field()
-  art!: boolean;
+  /*@Field()
+  art!: boolean;*/
 
   @Field()
   completed!: boolean;
