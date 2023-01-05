@@ -8,12 +8,18 @@ export class TodoItem implements TigrisCollectionType {
   @Field()
   text!: string;
 
+<<<<<<< HEAD
   /*@Field()
   art!: boolean;*
 
   @Field()
     completed!: boolean;
 
+=======
+>>>>>>> parent of 82cf3c4 (Update todoItems.ts)
   /*@Field()
   art!: boolean;*/
+
+  @Field()
+  completed!: boolean;
 }
