@@ -8,6 +8,7 @@ type Props = {
   toDoItem: TodoItem;
   deleteHandler: (id?: number) => void;
   updateHandler: (item: TodoItem) => void;
+  artUpdateHandler: (item: TodoItem["art"]) => true;
 };
 const EachTodo = ({ toDoItem, deleteHandler, updateHandler }: Props) => {
   return (
