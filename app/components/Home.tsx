@@ -209,9 +209,9 @@ const Home = () => {
           <input
             className={`searchInput ${wiggleError ? 'invalid' : ''}`}
             value={textInput}
-            onChange={e => {
+            onChange={f => {
               setWiggleError(false);
-              setArchetypeInput(e.target.value);
+              setArchetypeInput(f.target.value);
             }}
             placeholder="Type an item to add or search"
           />
