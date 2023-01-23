@@ -9,7 +9,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={rubik.className}>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <title>Abababababa Database</title>
+        <title>Neverenders Database</title>
         <meta name="description" content="Tigris app tutorial" />
       </head>
       <body>{children}</body>
