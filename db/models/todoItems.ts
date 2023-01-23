@@ -19,4 +19,6 @@ export class TodoItem implements TigrisCollectionType {
 
   @Field()
   status!: string;
+
+  
 }

@@ -203,6 +203,7 @@ const Home = () => {
             onChange={e => {
               setWiggleError(false);
               setTextInput(e.target.value);
+              setArchetypeInput(e.target.value);
             }}
             placeholder="Type an item to add or search"
           />
@@ -220,6 +221,7 @@ const Home = () => {
               className="clearSearch"
               onClick={() => {
                 setTextInput('');
+                setArchetypeInput('');
                 fetchListItems();
               }}
             >
