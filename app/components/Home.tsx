@@ -211,7 +211,7 @@ const Home = () => {
             value={textInput}
             onChange={e => {
               setWiggleError(false);
-              setTextInput(e.target.value);
+              setArchetypeInput(e.target.value);
             }}
             placeholder="Type an item to add or search"
           />
