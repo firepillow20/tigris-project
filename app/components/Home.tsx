@@ -203,7 +203,10 @@ const Home = () => {
             onChange={e => {
               setWiggleError(false);
               setTextInput(e.target.value);
-              setArchetypeInput(e.target.value);
+            }}
+            onChange={f => {
+              setWiggleError(false);
+              setArchetypeInput(f.target.value);
             }}
             placeholder="Type an item to add or search"
           />
