@@ -13,6 +13,12 @@ const Home = () => {
   // Archetype Input Field
   const [archetypeInput, setArchetypeInput] = useState('');
 
+  // Health Input Field
+  const [healthInput, setHealthInput] = useState('');
+
+  // Attack Input Field
+  const [attackInput, setAttackInput] = useState('');
+
   // Todo list array which displays the todo items
   const [todoList, setTodoList] = useState<TodoItem[]>([]);
 
@@ -73,11 +79,13 @@ const Home = () => {
 
     fetch('/api/items', {
       method: 'POST',
-      body: JSON.stringify({ text: textInput + "\nArchetype: " + archetypeInput, completed: false, archetype: archetypeInput })
+        body: JSON.stringify({ text: "Name: " + textInput + " | Archetype: " + archetypeInput +  " | Stats: " + attackInput + "/" + healthInput, completed: false, archetype: archetypeInput })
     }).then(() => {
       setIsLoading(false);
       setTextInput('');
       setArchetypeInput('');
+      setHealthInput('');
+      setAttackInput('');
       fetchListItems();
     });
   };
@@ -158,6 +166,40 @@ const Home = () => {
     });
     };
 
+  const updateTodoItemHealth = (item: TodoItem) => {
+    item.health = 0;
+    setIsLoading(true);
+
+    fetch('/api/item/' + item.id, {
+      method: 'PUT',
+      body: JSON.stringify(item)
+    }).then(() => {
+      setIsLoading(false);
+      if (viewMode == 'list') {
+        fetchListItems();
+      } else {
+        searchQuery();
+      }
+    });
+    };
+
+  const updateTodoItemAttack = (item: TodoItem) => {
+      item.attack = 0;
+    setIsLoading(true);
+
+    fetch('/api/item/' + item.id, {
+      method: 'PUT',
+      body: JSON.stringify(item)
+    }).then(() => {
+      setIsLoading(false);
+      if (viewMode == 'list') {
+        fetchListItems();
+      } else {
+        searchQuery();
+      }
+    });
+    };
+
 
 
   // Search query
@@ -223,7 +265,7 @@ const Home = () => {
               setWiggleError(false);
               setTextInput(e.target.value);
             }}
-            placeholder="Type an item to add or search"
+            placeholder="Enter name or search"
           />
           <input
             className={`searchInput ${wiggleError ? 'invalid' : ''}`}
@@ -232,7 +274,25 @@ const Home = () => {
               setWiggleError(false);
               setArchetypeInput(f.target.value);
             }}
-            placeholder="Type an item to add or search"
+            placeholder="Enter archetype"
+          />
+          <input
+            className={`searchInput ${wiggleError ? 'invalid' : ''}`}
+            value={healthInput}
+            onChange={f => {
+              setWiggleError(false);
+              sethealthInput(f.target.value);
+            }}
+            placeholder="Enter health"
+          />
+          <input
+            className={`searchInput ${wiggleError ? 'invalid' : ''}`}
+            value={attackInput}
+            onChange={f => {
+              setWiggleError(false);
+              sethealthInput(f.target.value);
+            }}
+            placeholder="Enter attack"
           />
           <button onClick={addToDoItem}>Add</button>
           <button onClick={searchQuery}>Search</button>
@@ -249,6 +309,8 @@ const Home = () => {
               onClick={() => {
                 setTextInput('');
                 setArchetypeInput('');
+                setHealthInput('');
+                setAttackInput('');
                 fetchListItems();
               }}
             >
@@ -270,7 +332,9 @@ const Home = () => {
                     toDoItem={each}
                     deleteHandler={deleteTodoItem}
                     updateHandler={updateTodoItem}
-                    archetypeHandler={updateTodoItemArchetype}
+                        archetypeHandler={updateTodoItemArchetype}
+                        healthHandler={updateTodoItemHealth}
+                        attackHandler={updateTodoItemAttack}
                     artUpdateHandler={updateTodoItemArt}
                   />
                 );
