@@ -9,8 +9,9 @@ type Props = {
   deleteHandler: (id?: number) => void;
   updateHandler: (item: TodoItem) => void;
   artUpdateHandler: (item: TodoItem) => void;
-  
-  : (item: TodoItem) => void;
+  archetypeHandler: (item: TodoItem) => void;
+  healthHandler: (item: TodoItem) => void;
+  attackHandler: (item: TodoItem) => void;
 };
 const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHealth artUpdateHandler }: Props) => {
   return (
