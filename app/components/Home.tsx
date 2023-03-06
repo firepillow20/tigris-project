@@ -290,7 +290,7 @@ const Home = () => {
             value={healthInput}
             onChange={f => {
               setWiggleError(false);
-              setAttackInput(f.target.value);
+              setHealthInput(f.target.value);
             }}
             placeholder="Enter health"
           />
