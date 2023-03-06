@@ -22,4 +22,10 @@ export class TodoItem implements TigrisCollectionType {
 
   @Field()
   url!: string;  
+
+  @Field()
+  health!: number;
+
+  @Field()
+  attack!: number;
 }
