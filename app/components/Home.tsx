@@ -278,21 +278,21 @@ const Home = () => {
           />
           <input
             className={`searchInput ${wiggleError ? 'invalid' : ''}`}
-            value={healthInput}
+            value={attackInput}
             onChange={f => {
               setWiggleError(false);
               setHealthInput(f.target.value);
             }}
-            placeholder="Enter health"
+            placeholder="Enter attack"
           />
           <input
             className={`searchInput ${wiggleError ? 'invalid' : ''}`}
-            value={attackInput}
+            value={healthInput}
             onChange={f => {
               setWiggleError(false);
               setAttackInput(f.target.value);
             }}
-            placeholder="Enter attack"
+            placeholder="Enter health"
           />
           <button onClick={addToDoItem}>Add</button>
           <button onClick={searchQuery}>Search</button>
@@ -332,9 +332,9 @@ const Home = () => {
                     toDoItem={each}
                     deleteHandler={deleteTodoItem}
                     updateHandler={updateTodoItem}
-                        archetypeHandler={updateTodoItemArchetype}
-                        healthHandler={updateTodoItemHealth}
-                        attackHandler={updateTodoItemAttack}
+                    archetypeHandler={updateTodoItemArchetype}
+                    healthHandler={updateTodoItemHealth}
+                    attackHandler={updateTodoItemAttack}
                     artUpdateHandler={updateTodoItemArt}
                   />
                 );
