@@ -73,7 +73,7 @@ const Home = () => {
 
     fetch('/api/items', {
       method: 'POST',
-      body: JSON.stringify({ text: textInput, completed: false, archetype: archetypeInput })
+      body: JSON.stringify({ text: textInput + "\nArchetype: " + archetypeInput, completed: false, archetype: archetypeInput })
     }).then(() => {
       setIsLoading(false);
       setTextInput('');
