@@ -13,7 +13,7 @@ type Props = {
   healthHandler: (item: TodoItem) => void;
   attackHandler: (item: TodoItem) => void;
 };
-const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHealth artUpdateHandler }: Props) => {
+const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, artUpdateHandler }: Props) => {
   return (
     <>
       <li className="each">
