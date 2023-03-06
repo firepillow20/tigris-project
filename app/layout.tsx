@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" />
         <title>Neverenders Database</title>
-        <meta name="description" content="Tigris app tutorial" />
+        <meta name="description" content="Neverenders official database" />
       </head>
       <body>{children}</body>
     </html>
