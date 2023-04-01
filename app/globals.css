@@ -187,6 +187,7 @@ h1 {
 
 .searchInput {
   min-width: 300px;
+  column-count: 2;
 }
 
 .results {
