@@ -254,7 +254,7 @@ const Home = () => {
   return (
     <div>
       <div className="container">
-        <h2>Neverenders To-Do List</h2>
+        <h2>Neverenders Database</h2>
 
         {/* Search Header */}
         <div className="searchHeader">
