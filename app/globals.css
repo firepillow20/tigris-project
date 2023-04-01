@@ -192,10 +192,11 @@ h1 {
 }
 
 .results {
-  position: relative;
+  position: center;
   background-color: #fff;
   min-width: 600px;
   min-height: 200px;
+  max-width: 1200px;
   border-radius: 8px;
   color: #0f2832;
   overflow: hidden;
