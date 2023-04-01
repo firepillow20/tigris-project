@@ -258,6 +258,8 @@ const Home = () => {
 
         {/* Search Header */}
         <div className="searchHeader">
+          <button onClick={addToDoItem}>Add</button>
+          <button onClick={searchQuery}>Search</button>
           <input
             className={`searchInput ${wiggleError ? 'invalid' : ''}`}
             value={textInput}
@@ -294,8 +296,6 @@ const Home = () => {
             }}
             placeholder="Enter health"
           />
-          <button onClick={addToDoItem}>Add</button>
-          <button onClick={searchQuery}>Search</button>
         </div>
 
         {/* Results section */}
