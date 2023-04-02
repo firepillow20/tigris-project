@@ -52,6 +52,12 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
         >
           <Image src="/delete.svg" width={24} height={24} alt="Check Image" />
         </button>
+        <Image
+            src={toDoItem.art ? '/circle-checked.svg' : '/circle.svg'}
+            width={20}
+            height={20}
+            alt="Check Image"
+        />
       </li>
     </>
   );
