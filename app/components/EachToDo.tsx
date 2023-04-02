@@ -53,7 +53,7 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
           <Image src="/delete.svg" width={24} height={24} alt="Check Image" />
         </button>
         <Image
-            src={url}
+            src={toDoItem.url}
             width={112}
             height={156}
             alt="Card image"
