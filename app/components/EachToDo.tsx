@@ -30,7 +30,6 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
             height={20}
             alt="Check Image"
           />
-          <span style={toDoItem.completed ? { textDecoration: 'line-through' } : {}}>{toDoItem.text}</span>
         </button>
         <button
           className="artButton"
@@ -54,7 +53,7 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
           <Image src="/delete.svg" width={24} height={24} alt="Check Image" />
         </button>
         <Image
-            src={toDoItem.url}
+            src={https://media.discordapp.net/attachments/1029230405511024731/1092166174017601637/Utopia.png?width=140&height=195}
             width={112}
             height={156}
             alt="Card image"
