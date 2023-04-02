@@ -5,7 +5,7 @@ export class TodoItem implements TigrisCollectionType {
   @PrimaryKey(TigrisDataTypes.INT32, { order: 1, autoGenerate: true })
   id!: number;
 
-  @PrimaryKey({ order: 2 })
+  @Field()
   text!: string;
 
   @Field()
