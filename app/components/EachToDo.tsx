@@ -12,8 +12,9 @@ type Props = {
   archetypeHandler: (item: TodoItem) => void;
   healthHandler: (item: TodoItem) => void;
   attackHandler: (item: TodoItem) => void;
+  urlHandler: (item: TodoItem) => void;
 };
-const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, artUpdateHandler }: Props) => {
+const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, urlHandler, artUpdateHandler }: Props) => {
   return (
     <>
       <li className="each">
@@ -53,10 +54,9 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
           <Image src="/delete.svg" width={24} height={24} alt="Check Image" />
         </button>
         <Image
-            src={toDoItem.art ? '/circle-checked.svg' : '/circle.svg'}
-            width={20}
-            height={20}
-            alt="Check Image"
+            src={toDoItem.url}
+            width={112}
+            height={156}
         />
       </li>
     </>

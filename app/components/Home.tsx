@@ -19,6 +19,9 @@ const Home = () => {
   // Attack Input Field
   const [attackInput, setAttackInput] = useState('');
 
+  // Url Input Field
+  const [urlInput, setUrlInput] = useState('');
+
   // Todo list array which displays the todo items
   const [todoList, setTodoList] = useState<TodoItem[]>([]);
 
@@ -86,6 +89,7 @@ const Home = () => {
       setArchetypeInput('');
       setHealthInput('');
       setAttackInput('');
+      setUrlInput('');
       fetchListItems();
     });
   };
@@ -151,6 +155,23 @@ const Home = () => {
 
   const updateTodoItemArchetype = (item: TodoItem) => {
     item.archetype = ''
+    setIsLoading(true);
+
+    fetch('/api/item/' + item.id, {
+      method: 'PUT',
+      body: JSON.stringify(item)
+    }).then(() => {
+      setIsLoading(false);
+      if (viewMode == 'list') {
+        fetchListItems();
+      } else {
+        searchQuery();
+      }
+    });
+    };
+
+  const updateTodoItemUrl = (item: TodoItem) => {
+    item.url = ''
     setIsLoading(true);
 
     fetch('/api/item/' + item.id, {
@@ -296,6 +317,15 @@ const Home = () => {
             }}
             placeholder="Enter health"
           />
+          <input
+            className={`searchInput ${wiggleError ? 'invalid' : ''}`}
+            value={urlInput}
+            onChange={f => {
+              setWiggleError(false);
+              setUrlInput(f.target.value);
+            }}
+            placeholder="Enter image link"
+          />
         </div>
 
         {/* Results section */}
@@ -311,6 +341,7 @@ const Home = () => {
                 setArchetypeInput('');
                 setHealthInput('');
                 setAttackInput('');
+                setUrlInput('');
                 fetchListItems();
               }}
             >
@@ -335,6 +366,7 @@ const Home = () => {
                     archetypeHandler={updateTodoItemArchetype}
                     healthHandler={updateTodoItemHealth}
                     attackHandler={updateTodoItemAttack}
+                    urlHandler={updateTodoItemUrl}
                     artUpdateHandler={updateTodoItemArt}
                   />
                 );
