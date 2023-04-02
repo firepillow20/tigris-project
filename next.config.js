@@ -5,5 +5,17 @@ const nextConfig = {
     appDir: true,
   },
 }
+module.exports = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.discordapp.com',
+                port: '',
+                pathname: '/attachments/**',
+            },
+        ],
+    },
+}
 
 module.exports = nextConfig
