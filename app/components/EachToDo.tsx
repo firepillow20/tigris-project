@@ -18,21 +18,9 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
   return (
     <>
       <li className="each">
-        <button
-          className="eachButton"
-          onClick={() => {
-            updateHandler(toDoItem);
-          }}
-        >
-          <Image
-            src={toDoItem.completed ? '/circle-checked.svg' : '/circle.svg'}
-            width={20}
-            height={20}
-            alt="Check Image"
-          />
-          <span>{toDoItem.text}</span>
-        </button>
-
+        <span>{toDoItem.text}</span>
+        <span>{toDoItem.archetype}</span>
+        <span>{toDoItem.attack}</span>
         <button
           className="deleteBtn"
           onClick={() => {
