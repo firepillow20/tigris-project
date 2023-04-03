@@ -24,6 +24,12 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
             updateHandler(toDoItem);
           }}
         >
+          <Image
+            src={toDoItem.completed ? '/circle-checked.svg' : '/circle.svg'}
+            width={20}
+            height={20}
+            alt="Check Image"
+          />
           <span>{toDoItem.text}</span>
         </button>
 
