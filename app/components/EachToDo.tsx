@@ -18,6 +18,7 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
   return (
     <>
       <li className="each">
+        <span>{toDoItem.text}</span>
         <button
           className="deleteBtn"
           onClick={() => {
