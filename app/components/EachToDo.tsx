@@ -19,6 +19,33 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
     <>
       <li className="each">
         <button
+          className="eachButton"
+          onClick={() => {
+            updateHandler(toDoItem);
+          }}
+        >
+          <Image
+            src={toDoItem.completed ? '/circle-checked.svg' : '/circle.svg'}
+            width={20}
+            height={20}
+            alt="Check Image"
+          />
+          <span>{toDoItem.text}</span>
+        </button>
+        <button
+          className="artButton"
+          onClick={() => {
+            artUpdateHandler(toDoItem);
+          }}
+        >
+          <Image
+            src={toDoItem.art ? '/circle-checked.svg' : '/circle.svg'}
+            width={20}
+            height={20}
+            alt="Check Image"
+          />
+        </button>
+        <button
           className="deleteBtn"
           onClick={() => {
             deleteHandler(toDoItem.id);
@@ -28,8 +55,8 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
         </button>
         <Image
             src={toDoItem.url}
-            width={1120}
-            height={1560}
+            width={112}
+            height={156}
             alt="Card Image"
         />
       </li>
