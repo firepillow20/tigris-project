@@ -84,7 +84,9 @@ const Home = () => {
       method: 'POST',
         body: JSON.stringify({
             url: urlInput,
-            text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput, completed: false, archetype: archetypeInput
+            text: "Name: " + textInput,
+            archetype: "Archetype: " + archetypeInput,
+            attack: "Stats: " + attackInput + "/" + healthInput
         })
     }).then(() => {
       setIsLoading(false);
