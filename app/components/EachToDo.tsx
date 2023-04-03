@@ -29,8 +29,8 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
         </button>
         <Image
             src={toDoItem.url}
-            width={1120}
-            height={1560}
+            width={112}
+            height={156}
             alt="Card Image"
         />
       </li>
