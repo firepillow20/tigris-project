@@ -10,7 +10,7 @@ module.exports = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'cdn.discordapp.com',
+                hostname: 'media.discordapp.net',
                 port: '',
                 pathname: '/attachments/**',
             },
