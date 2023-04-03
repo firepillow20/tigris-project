@@ -82,7 +82,8 @@ const Home = () => {
 
     fetch('/api/items', {
       method: 'POST',
-        body: JSON.stringify({ text: "Name: " + textInput + " | Archetype: " + archetypeInput +  " | Stats: " + attackInput + "/" + healthInput, completed: false, archetype: archetypeInput })
+        body: JSON.stringify({
+            text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Url: " + urlInput, completed: false, archetype: archetypeInput })
     }).then(() => {
       setIsLoading(false);
       setTextInput('');
