@@ -19,8 +19,6 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
     <>
       <li className="each">
         <span>{toDoItem.text}</span>
-        <span>{toDoItem.archetype}</span>
-        <span>{toDoItem.attack}</span>
         <button
           className="deleteBtn"
           onClick={() => {
