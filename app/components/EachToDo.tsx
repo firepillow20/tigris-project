@@ -30,7 +30,6 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
             height={20}
             alt="Check Image"
           />
-          <span>{toDoItem.text}</span>
           <span>{toDoItem.url}</span>
         </button>
         <button
