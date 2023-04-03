@@ -31,6 +31,7 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
             alt="Check Image"
           />
           <span>{toDoItem.text}</span>
+          <span>{toDoItem.url}</span>
         </button>
         <button
           className="artButton"
