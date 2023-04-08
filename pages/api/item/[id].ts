@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { CardItem } from '../../../db/models/cardItems';
+import { TodoItem } from '../../../db/models/todoItems';
 import tigrisDb from '../../../lib/tigris';
 
 type Data = {
-  result?: CardItem;
+  result?: TodoItem;
   error?: string;
 };
 
@@ -30,7 +30,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
 async function handleGet(req: NextApiRequest, res: NextApiResponse<Data>, itemId: number) {
   try {
-    const itemsCollection = tigrisDb.getCollection<CardItem>(CardItem);
+    const itemsCollection = tigrisDb.getCollection<TodoItem>(TodoItem);
     const item = await itemsCollection.findOne({ id: itemId });
     if (!item) {
       res.status(404).json({ error: 'No item found' });
@@ -45,8 +45,8 @@ async function handleGet(req: NextApiRequest, res: NextApiResponse<Data>, itemId
 
 async function handlePut(req: NextApiRequest, res: NextApiResponse<Data>) {
   try {
-    const item = JSON.parse(req.body) as CardItem;
-    const itemsCollection = tigrisDb.getCollection<CardItem>(CardItem);
+    const item = JSON.parse(req.body) as TodoItem;
+    const itemsCollection = tigrisDb.getCollection<TodoItem>(TodoItem);
     const updated = await itemsCollection.insertOrReplaceOne(item);
     res.status(200).json({ result: updated });
   } catch (err) {
@@ -57,7 +57,7 @@ async function handlePut(req: NextApiRequest, res: NextApiResponse<Data>) {
 
 async function handleDelete(req: NextApiRequest, res: NextApiResponse<Data>, itemId: number) {
   try {
-    const itemsCollection = tigrisDb.getCollection<CardItem>(CardItem);
+    const itemsCollection = tigrisDb.getCollection<TodoItem>(TodoItem);
     const status = (await itemsCollection.deleteOne({ id: itemId })).status;
     if (status === 'deleted') {
       res.status(200).json({});
