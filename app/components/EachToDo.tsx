@@ -2,44 +2,44 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { TodoItem } from '../../db/models/todoItems';
+import { CardItem } from '../../db/models/cardItems';
 
 type Props = {
-  toDoItem: TodoItem;
+  CardItem: CardItem;
   deleteHandler: (id?: number) => void;
-  updateHandler: (item: TodoItem) => void;
-  artUpdateHandler: (item: TodoItem) => void;
-  archetypeHandler: (item: TodoItem) => void;
-  healthHandler: (item: TodoItem) => void;
-  attackHandler: (item: TodoItem) => void;
-  urlHandler: (item: TodoItem) => void;
+  updateHandler: (item: CardItem) => void;
+    artUpdateHandler: (item: CardItem) => void;
+    archetypeHandler: (item: CardItem) => void;
+    healthHandler: (item: CardItem) => void;
+    attackHandler: (item: CardItem) => void;
+    urlHandler: (item: CardItem) => void;
 };
-const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, urlHandler, artUpdateHandler }: Props) => {
+const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, urlHandler, artUpdateHandler }: Props) => {
   return (
     <>
       <li className="each">
         <button
           className="eachButton"
           onClick={() => {
-            updateHandler(toDoItem);
+              updateHandler(CardItem);
           }}
         >
           <Image
-            src={toDoItem.completed ? '/circle-checked.svg' : '/circle.svg'}
+            src={CardItem.completed ? '/circle-checked.svg' : '/circle.svg'}
             width={20}
             height={20}
             alt="Check Image"
           />
-          <span>{toDoItem.text}</span>
+          <span>{CardItem.text}</span>
         </button>
         <button
           className="artButton"
           onClick={() => {
-            artUpdateHandler(toDoItem);
+              artUpdateHandler(CardItem);
           }}
         >
           <Image
-            src={toDoItem.art ? '/circle-checked.svg' : '/circle.svg'}
+            src={CardItem.art ? '/circle-checked.svg' : '/circle.svg'}
             width={20}
             height={20}
             alt="Check Image"
@@ -48,13 +48,13 @@ const EachTodo = ({ toDoItem, deleteHandler, updateHandler, archetypeHandler, he
         <button
           className="deleteBtn"
           onClick={() => {
-            deleteHandler(toDoItem.id);
+              deleteHandler(CardItem.id);
           }}
         >
           <Image src="/delete.svg" width={24} height={24} alt="Check Image" />
         </button>
         <Image
-            src={toDoItem.url}
+            src={CardItem.url}
             width={112}
             height={156}
             alt="Card Image"

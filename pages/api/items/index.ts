@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { TodoItem } from '../../../db/models/todoItems';
+import { CardItem } from '../../../db/models/cardItems';
 import tigrisDb from '../../../lib/tigris';
 
 type Response = {
-  result?: Array<TodoItem>;
+  result?: Array<CardItem>;
   error?: string;
 };
 
@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
 async function handleGet(req: NextApiRequest, res: NextApiResponse<Response>) {
   try {
-    const itemsCollection = tigrisDb.getCollection<TodoItem>(TodoItem);
+    const itemsCollection = tigrisDb.getCollection<CardItem>(CardItem);
     const cursor = itemsCollection.findMany();
     const items = await cursor.toArray();
     res.status(200).json({ result: items });
@@ -37,8 +37,8 @@ async function handleGet(req: NextApiRequest, res: NextApiResponse<Response>) {
 
 async function handlePost(req: NextApiRequest, res: NextApiResponse<Response>) {
   try {
-    const item = JSON.parse(req.body) as TodoItem ;
-    const itemsCollection = tigrisDb.getCollection<TodoItem>(TodoItem);
+    const item = JSON.parse(req.body) as CardItem ;
+    const itemsCollection = tigrisDb.getCollection<CardItem>(CardItem);
     const inserted = await itemsCollection.insertOne(item);
     res.status(200).json({ result: [inserted] });
   } catch (err) {
