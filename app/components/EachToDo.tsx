@@ -37,7 +37,7 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
         <button
           className="deleteBtn"
           onClick={() => {
-              if (confirm("Are you sure you want to delete this?") == true) {
+              if (confirm("Are you sure you want to delete this card?") == true) {
                   deleteHandler(CardItem.id);
               } else {
               }
