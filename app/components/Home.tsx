@@ -93,7 +93,7 @@ const Home = () => {
             text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput,
             completed: false,
             archetype: archetypeInput,
-            effects: effectsInput
+            effects: "Effects: " + effectsInput
         })
     }).then(() => {
       setIsLoading(false);
