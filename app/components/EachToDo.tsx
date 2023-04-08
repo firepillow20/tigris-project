@@ -34,6 +34,14 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
             height={156}
             alt="Card Image"
         />
+        <button
+          className="eachButton"
+          onClick={() => {
+              deleteHandler(CardItem.id);
+          }}
+        >
+        <Image src="/delete.svg" width={24} height={24} alt="" />
+        </button>
       </li>
     </>
   );
