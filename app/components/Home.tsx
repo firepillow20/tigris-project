@@ -90,7 +90,7 @@ const Home = () => {
       method: 'POST',
         body: JSON.stringify({
             url: urlInput,
-            text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput + "\nEffects: " + effectsInput,
+            text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput
             completed: false,
             archetype: archetypeInput,
         })
