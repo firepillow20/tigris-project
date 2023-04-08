@@ -2,21 +2,21 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { CardItem } from '../../db/models/cardItems';
+import { TodoItem } from '../../db/models/todoItems';
 
 type Props = {
-  CardItem: CardItem;
+  TodoItem: TodoItem;
   deleteHandler: (id?: number) => void;
-  updateHandler: (item: CardItem) => void;
-    artUpdateHandler: (item: CardItem) => void;
-    archetypeHandler: (item: CardItem) => void;
-    healthHandler: (item: CardItem) => void;
-    attackHandler: (item: CardItem) => void;
-    urlHandler: (item: CardItem) => void;
-    costHandler: (item: CardItem) => void;
-    effectsHandler: (item: CardItem) => void;
+  updateHandler: (item: TodoItem) => void;
+    artUpdateHandler: (item: TodoItem) => void;
+    archetypeHandler: (item: TodoItem) => void;
+    healthHandler: (item: TodoItem) => void;
+    attackHandler: (item: TodoItem) => void;
+    urlHandler: (item: TodoItem) => void;
+    costHandler: (item: TodoItem) => void;
+    effectsHandler: (item: TodoItem) => void;
 };
-const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, urlHandler, costHandler, effectsHandler, artUpdateHandler }: Props) => {
+const EachTodo = ({ TodoItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, urlHandler, costHandler, effectsHandler, artUpdateHandler }: Props) => {
   return (
     <>
       <li className="each">
@@ -26,10 +26,10 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
 
           }}
         >
-          <span>{CardItem.text}</span>
+          <span>{TodoItem.text}</span>
         </button>
         <Image
-            src={CardItem.url}
+            src={TodoItem.url}
             width={112}
             height={156}
             alt="Card Image"
@@ -38,7 +38,7 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
           className="deleteBtn"
           onClick={() => {
               if (confirm("Are you sure you want to delete this card?") == true) {
-                  deleteHandler(CardItem.id);
+                  deleteHandler(TodoItem.id);
               } else {
               }
           }}

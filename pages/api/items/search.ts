@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { CardItem } from '../../../db/models/cardItems';
+import { TodoItem } from '../../../db/models/todoItems';
 import { SearchRequest } from '@tigrisdata/core/dist/search/types';
 import tigrisDb from '../../../lib/tigris';
 
 type Data = {
-  result?: Array<CardItem>;
+  result?: Array<TodoItem>;
   error?: string;
 };
 
@@ -16,10 +16,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return;
   }
   try {
-    const itemsCollection = tigrisDb.getCollection<CardItem>(CardItem);
-    const searchRequest: SearchRequest<CardItem> = { q: query as string };
+    const itemsCollection = tigrisDb.getCollection<TodoItem>(TodoItem);
+    const searchRequest: SearchRequest<TodoItem> = { q: query as string };
     const searchResult = await itemsCollection.search(searchRequest);
-    const items = new Array<CardItem>();
+    const items = new Array<TodoItem>();
     for (const hit of searchResult.hits) {
       items.push(hit.document);
     }
