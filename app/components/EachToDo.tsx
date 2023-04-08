@@ -37,7 +37,10 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
         <button
           className="deleteBtn"
           onClick={() => {
-              deleteHandler(CardItem.id);
+              if (confirm("Press a button!") == true) {
+                  deleteHandler(CardItem.id);
+              } else {
+              }
           }}
         >
         <Image src="/delete.svg" width={24} height={24} alt="" />
