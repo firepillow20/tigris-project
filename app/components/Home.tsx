@@ -322,7 +322,9 @@ const Home = () => {
   return (
     <div>
       <div className="container">
-        <h2>Neverenders Database</h2>
+              <h2>Neverenders Database\n
+                  Don't touch if you're not part of the dev team(please)
+              </h2>
 
         {/* Search Header */}
         <div className="searchHeader">
