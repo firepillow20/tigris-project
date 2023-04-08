@@ -30,7 +30,7 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
             height={20}
             alt="Check Image"
           />
-          <span>{CardItem.text}</span>
+          <span>{"Name: " + CardItem.text + " | Archetype: " + CardItem.archetype + " | Stats: " + CardItem.attack + "/" + CardItem.health}</span>
         </button>
         <button
           className="deleteBtn"
