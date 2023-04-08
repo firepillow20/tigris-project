@@ -333,7 +333,7 @@ h1 {
 }
 
 .eachButton:hover img {
-  content: url('/circle-checked.svg');
+  
 }
 
 .eachButton:hover span {
