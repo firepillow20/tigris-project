@@ -44,7 +44,6 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
             height={20}
             alt="Check Image"
           />
-        </button>
         <button
           className="deleteBtn"
           onClick={() => {
