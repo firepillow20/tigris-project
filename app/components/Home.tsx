@@ -322,9 +322,8 @@ const Home = () => {
   return (
     <div>
       <div className="container">
-              <h2>Neverenders Database\n
-                  Don't touch if you're not part of the dev team(please)
-              </h2>
+        <h2>Neverenders Database</h2>
+        <h3>Don't touch if you're not part of the dev team(please)</h3>
 
         {/* Search Header */}
         <div className="searchHeader">
