@@ -28,4 +28,10 @@ export class CardItem implements TigrisCollectionType {
 
 	@Field()
 	attack!: number;
+
+	@Field()
+	cost!: string;
+
+	@Field()
+	effects!: string;
 }

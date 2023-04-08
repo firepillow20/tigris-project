@@ -22,6 +22,12 @@ const Home = () => {
   // Url Input Field
   const [urlInput, setUrlInput] = useState('');
 
+  // Cost Input Field
+  const [costInput, setCostInput] = useState('');
+
+  // Effects Input Field
+  const [effectsInput, setEffectsInput] = useState('');
+
   // Todo list array which displays the todo items
   const [todoList, setTodoList] = useState<CardItem[]>([]);
 
@@ -84,7 +90,10 @@ const Home = () => {
       method: 'POST',
         body: JSON.stringify({
             url: urlInput,
-            text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput, completed: false, archetype: archetypeInput
+            text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput,
+            completed: false,
+            archetype: archetypeInput,
+            effects: effectsInput
         })
     }).then(() => {
       setIsLoading(false);
@@ -93,6 +102,8 @@ const Home = () => {
       setHealthInput('');
       setAttackInput('');
       setUrlInput('');
+      setCostInput('');
+      setEffectsInput('');
       fetchListItems();
     });
   };
@@ -158,6 +169,40 @@ const Home = () => {
 
   const updateTodoItemArchetype = (item: CardItem) => {
     item.archetype = ''
+    setIsLoading(true);
+
+    fetch('/api/item/' + item.id, {
+      method: 'PUT',
+      body: JSON.stringify(item)
+    }).then(() => {
+      setIsLoading(false);
+      if (viewMode == 'list') {
+        fetchListItems();
+      } else {
+        searchQuery();
+      }
+    });
+    };
+
+  const updateTodoItemCost = (item: CardItem) => {
+    item.cost = ''
+    setIsLoading(true);
+
+    fetch('/api/item/' + item.id, {
+      method: 'PUT',
+      body: JSON.stringify(item)
+    }).then(() => {
+      setIsLoading(false);
+      if (viewMode == 'list') {
+        fetchListItems();
+      } else {
+        searchQuery();
+      }
+    });
+    };
+
+  const updateTodoItemEffects = (item: CardItem) => {
+    item.effects = ''
     setIsLoading(true);
 
     fetch('/api/item/' + item.id, {
@@ -322,6 +367,24 @@ const Home = () => {
           />
           <input
             className={`searchInput ${wiggleError ? 'invalid' : ''}`}
+            value={costInput}
+            onChange={f => {
+              setWiggleError(false);
+              setCostInput(f.target.value);
+            }}
+            placeholder="Enter cost"
+          />
+          <input
+            className={`searchInput ${wiggleError ? 'invalid' : ''}`}
+            value={effectsInput}
+            onChange={f => {
+              setWiggleError(false);
+              setEffectsInput(f.target.value);
+            }}
+            placeholder="Enter effects"
+          />
+          <input
+            className={`searchInput ${wiggleError ? 'invalid' : ''}`}
             value={urlInput}
             onChange={f => {
               setWiggleError(false);
@@ -342,6 +405,8 @@ const Home = () => {
               onClick={() => {
                 setTextInput('');
                 setArchetypeInput('');
+                setEffectsInput('');
+                setCostInput('');
                 setHealthInput('');
                 setAttackInput('');
                 setUrlInput('');
@@ -370,6 +435,8 @@ const Home = () => {
                     healthHandler={updateTodoItemHealth}
                     attackHandler={updateTodoItemAttack}
                     urlHandler={updateTodoItemUrl}
+                    effectsHandler={updateTodoItemEffects}
+                    costHandler={updateTodoItemCost}
                     artUpdateHandler={updateTodoItemArt}
                   />
                 );

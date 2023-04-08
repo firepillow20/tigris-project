@@ -13,8 +13,10 @@ type Props = {
     healthHandler: (item: CardItem) => void;
     attackHandler: (item: CardItem) => void;
     urlHandler: (item: CardItem) => void;
+    costHandler: (item: CardItem) => void;
+    effectsHandler: (item: CardItem) => void;
 };
-const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, urlHandler, artUpdateHandler }: Props) => {
+const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, healthHandler, attackHandler, urlHandler, costHandler, effectsHandler, artUpdateHandler }: Props) => {
   return (
     <>
       <li className="each">
