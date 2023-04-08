@@ -420,7 +420,7 @@ const Home = () => {
           {/* Todo Item List */}
           {todoList.length < 1 ? (
             <p className="noItems">
-              {viewMode == 'search' ? 'No items found.. ' : 'Add a todo by typing in the field above and hit Add!'}
+              {viewMode == 'search' ? 'No items found.. ' : 'Add a card by filling in the fields above and hit Add!'}
             </p>
           ) : (
             <ul>
