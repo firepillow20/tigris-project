@@ -23,14 +23,13 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
           onClick={() => {
               updateHandler(CardItem);
           }}
-          >
+        >
           <Image
             src={CardItem.completed ? '/circle-checked.svg' : '/circle.svg'}
             width={20}
             height={20}
             alt="Check Image"
           />
-          <span>{CardItem.text}</span>
           <span>{"Name: " + CardItem.text + " | Archetype: " + CardItem.archetype + " | Stats: " + CardItem.attack + "/" + CardItem.health}</span>
         </button>
         <button
