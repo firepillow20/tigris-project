@@ -21,24 +21,11 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
         <button
           className="eachButton"
           onClick={() => {
-              updateHandler(CardItem);
-          }}
-        >
-          <Image
-            src={CardItem.completed ? '/circle-checked.svg' : '/circle.svg'}
-            width={20}
-            height={20}
-            alt="Check Image"
-          />
-          <span>{CardItem.text}</span>
-        </button>
-        <button
-          className="deleteBtn"
-          onClick={() => {
               deleteHandler(CardItem.id);
           }}
         >
           <Image src="/delete.svg" width={24} height={24} alt="Check Image" />
+          <span>{CardItem.text}</span>
         </button>
         <Image
             src={CardItem.url}
