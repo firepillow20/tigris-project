@@ -35,7 +35,7 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
             alt="Card Image"
         />
         <button
-          className="eachButton"
+          className="deleteButton"
           onClick={() => {
               deleteHandler(CardItem.id);
           }}
