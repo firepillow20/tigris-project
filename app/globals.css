@@ -178,11 +178,11 @@ h1 {
   align-content: space-around;
 }
 
-{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-top: 20px;
+.searchHeader {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .searchInput {
