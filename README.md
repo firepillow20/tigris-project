@@ -128,7 +128,11 @@ All the Next.js API routes are defined under `pages/api/`. We have three files e
 - `GET /api/items` to get an array of to-do items as Array<TodoItem>
 - `POST /api/items` to add an item to the list
 
-#### [`/pages/api/items/search.ts`](/pages/api/items/search.ts)
+#### [`/pages/api/items/
+
+
+
+.ts`](/pages/api/items/search.ts)
 
 - `GET /api/items/search?q=query` to find and return items matching the given query
 

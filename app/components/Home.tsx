@@ -88,7 +88,7 @@ const Home = () => {
 
     fetch('/api/items', {
       method: 'POST',
-        body: JSON.stringify({
+      body: JSON.stringify({
             url: urlInput,
             text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput + "\nEffects: " + effectsInput,
             completed: false,
@@ -404,7 +404,7 @@ const Home = () => {
                 fetchListItems();
               }}
             >
-              Go back to list
+                Go back to list
             </button>
           )}
 
