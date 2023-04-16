@@ -3,7 +3,7 @@ import { Field, PrimaryKey, TigrisCollection, TigrisCollectionType, TigrisDataTy
 @TigrisCollection('todoItems')
 export class TodoItem implements TigrisCollectionType {
   @PrimaryKey(TigrisDataTypes.INT32, { order: 1, autoGenerate: true })
-    id!: number;
+  id!: number;
 
   @Field()
   text!: string;
@@ -11,27 +11,21 @@ export class TodoItem implements TigrisCollectionType {
   @Field()
   completed!: boolean;
 
-	@Field()
-	art!: boolean;
+  @Field()
+  art!: boolean;
 
-	@Field()
-	archetype!: string;
+  @Field()
+  archetype!: string;
 
-	@Field()
-	status!: string;
+  @Field()
+  status!: string;
 
-	@Field()
-	url!: string;
+  @Field()
+  url!: string;  
 
-	@Field()
-	health!: number;
+  @Field()
+  health!: number;
 
-	@Field()
-	attack!: number;
-
-	@Field()
-	cost!: string;
-
-	@Field()
-	effects!: string;
+  @Field()
+  attack!: number;
 }
