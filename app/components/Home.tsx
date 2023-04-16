@@ -404,7 +404,7 @@ const Home = () => {
                 fetchListItems();
               }}
             >
-            Go back to list
+              Go back to list
             </button>
           )}
 
