@@ -376,6 +376,15 @@ const Home = () => {
           />
           <input
             className={`searchInput ${wiggleError ? 'invalid' : ''}`}
+            value={effectsInput}
+            onChange={f => {
+              setWiggleError(false);
+              setEffectsInput(f.target.value);
+            }}
+            placeholder="Enter effects"
+          />
+          <input
+            className={`searchInput ${wiggleError ? 'invalid' : ''}`}
             value={urlInput}
             onChange={f => {
               setWiggleError(false);
