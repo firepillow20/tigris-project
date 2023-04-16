@@ -367,6 +367,15 @@ const Home = () => {
           />
           <input
             className={`searchInput ${wiggleError ? 'invalid' : ''}`}
+            value={costInput}
+            onChange={f => {
+              setWiggleError(false);
+              setCostInput(f.target.value);
+            }}
+            placeholder="Enter cost"
+          />
+          <input
+            className={`searchInput ${wiggleError ? 'invalid' : ''}`}
             value={urlInput}
             onChange={f => {
               setWiggleError(false);
