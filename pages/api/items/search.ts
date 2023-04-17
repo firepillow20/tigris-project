@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     try {
         const itemsCollection = tigrisDb.getCollection<CardItem>(CardItem);
         const searchResult = await itemsCollection.search({ q: query as string });
-        const items = new Array<TodoItem>();
+        const items = new Array<CardItem>();
         for await (const res of searchResult) {
             res.hits.forEach(hit => items.push(hit.document));
         }
