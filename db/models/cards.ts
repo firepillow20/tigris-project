@@ -1,11 +1,12 @@
-import { Field, PrimaryKey, TigrisCollection, TigrisCollectionType, TigrisDataTypes } from '@tigrisdata/core';
+import { Field, PrimaryKey, SearchField, TigrisCollection, TigrisSearchIndex, TigrisCollectionType, TigrisDataTypes } from '@tigrisdata/core';
 
-@TigrisCollection('cardItems')
-export class CardItem implements TigrisCollectionType {
+@TigrisSearchIndex("cards")
+export class Card implements TigrisSearchIndex{
 	@PrimaryKey(TigrisDataTypes.INT32, { order: 1, autoGenerate: true })
 	id!: number;
 
-	@PrimaryKey({ order: 2})
+	@SearchField({ sort: true })
+	@PrimaryKey({ order: 2 })
 	text!: string;
 
 	@Field()
@@ -14,6 +15,7 @@ export class CardItem implements TigrisCollectionType {
 	@Field()
 	art!: boolean;
 
+	@SearchField({ sort: true })
 	@Field()
 	archetype!: string;
 
