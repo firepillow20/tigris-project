@@ -167,7 +167,7 @@ const Home = () => {
     };
 
   const updateTodoItemArchetype = (item: CardItem) => {
-    item.archetype = ''
+    item.archetype = '';
     setIsLoading(true);
 
     fetch('/api/item/' + item.id, {
@@ -184,7 +184,7 @@ const Home = () => {
     };
 
   const updateTodoItemCost = (item: CardItem) => {
-    item.cost = ''
+    item.cost = '';
     setIsLoading(true);
 
     fetch('/api/item/' + item.id, {
@@ -201,7 +201,7 @@ const Home = () => {
     };
 
   const updateTodoItemEffects = (item: CardItem) => {
-    item.effects = ''
+    item.effects = '';
     setIsLoading(true);
 
     fetch('/api/item/' + item.id, {
@@ -218,7 +218,7 @@ const Home = () => {
     };
 
   const updateTodoItemUrl = (item: CardItem) => {
-    item.url = ''
+    item.url = '';
     setIsLoading(true);
 
     fetch('/api/item/' + item.id, {
@@ -252,7 +252,7 @@ const Home = () => {
     };
 
   const updateTodoItemAttack = (item: CardItem) => {
-      item.attack = 0;
+    item.attack = 0;
     setIsLoading(true);
 
     fetch('/api/item/' + item.id, {
