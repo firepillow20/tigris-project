@@ -1,6 +1,7 @@
 import {
 	Field,
 	PrimaryKey,
+	SearchField,
 	TigrisCollection,
 	TigrisCollectionType,
 	TigrisDataTypes
