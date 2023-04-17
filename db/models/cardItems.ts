@@ -1,4 +1,11 @@
-import { Field, PrimaryKey, TigrisCollection, TigrisCollectionType, TigrisDataTypes } from '@tigrisdata/core';
+import {
+	Field,
+	PrimaryKey,
+	SearchField,
+	TigrisCollection,
+	TigrisCollectionType,
+	TigrisDataTypes
+} from '@tigrisdata/core';
 
 @TigrisCollection('cardItems')
 export class CardItem implements TigrisCollectionType {
