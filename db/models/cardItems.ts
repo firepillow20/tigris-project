@@ -1,4 +1,4 @@
-import { Field, PrimaryKey, SearchField, TigrisCollection, TigrisCollectionType, TigrisDataTypes } from '@tigrisdata/core';
+import { Field, PrimaryKey, TigrisCollection, TigrisCollectionType, TigrisDataTypes } from '@tigrisdata/core';
 
 @TigrisCollection('cardItems')
 export class CardItem implements TigrisCollectionType {
@@ -6,7 +6,6 @@ export class CardItem implements TigrisCollectionType {
 	id!: number;
 
 	@PrimaryKey({ order: 2 })
-	@SearchField()
 	text!: string;
 
 	@Field()
@@ -16,7 +15,6 @@ export class CardItem implements TigrisCollectionType {
 	art!: boolean;
 
 	@Field()
-	@SearchField()
 	archetype!: string;
 
 	@Field()
