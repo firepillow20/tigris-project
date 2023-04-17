@@ -18,8 +18,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         const itemsCollection = tigrisDb.getCollection<CardItem>(CardItem);
         const searchResult = await itemsCollection.search({ q: query as string });
         const items = new Array<CardItem>();
-        for (const res of searchResult) {
-            res.hits.forEach(hit => items.push(hit.document));
+        for await (const hit of searchResult.hits) {
+            items.push(hit.document);
         }
         res.status(200).json({ result: items });
     } catch (err) {
