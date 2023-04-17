@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import EachTodo from './EachToDo';
 import LoaderWave from './LoaderWave';
-import { Card } from '../../db/models/cards';
+import { CardItem } from '../../db/models/cardItems';
 
 const Home = () => {
   // This is the input field
@@ -29,7 +29,7 @@ const Home = () => {
   const [effectsInput, setEffectsInput] = useState('');
 
   // Todo list array which displays the todo items
-  const [todoList, setTodoList] = useState<Card[]>([]);
+  const [todoList, setTodoList] = useState<CardItem[]>([]);
 
   // Loading and Error flags for the template
   const [isLoading, setIsLoading] = useState(false);
@@ -132,7 +132,7 @@ const Home = () => {
   'updateTodoItem' takes the TodoItem object, inverts the 'completed' boolean and calls the same endpoint as 'deletion' but with a different method 'PUT'.
   Navigate to 'api/item/[id]' and read more how the api handles updates under the 'handlePut' method.
   */
-  const updateTodoItem = (item: Card) => {
+  const updateTodoItem = (item: CardItem) => {
     item.completed = !item.completed;
     setIsLoading(true);
 
@@ -149,7 +149,7 @@ const Home = () => {
     });
     };
 
-  const updateTodoItemArt = (item: Card) => {
+  const updateTodoItemArt = (item: CardItem) => {
     item.art = !item.art;
     setIsLoading(true);
 
@@ -166,7 +166,7 @@ const Home = () => {
     });
     };
 
-  const updateTodoItemArchetype = (item: Card) => {
+  const updateTodoItemArchetype = (item: CardItem) => {
     item.archetype = '';
     setIsLoading(true);
 
@@ -183,7 +183,7 @@ const Home = () => {
     });
     };
 
-  const updateTodoItemCost = (item: Card) => {
+  const updateTodoItemCost = (item: CardItem) => {
     item.cost = '';
     setIsLoading(true);
 
@@ -200,7 +200,7 @@ const Home = () => {
     });
     };
 
-  const updateTodoItemEffects = (item: Card) => {
+  const updateTodoItemEffects = (item: CardItem) => {
     item.effects = '';
     setIsLoading(true);
 
@@ -217,7 +217,7 @@ const Home = () => {
     });
     };
 
-  const updateTodoItemUrl = (item: Card) => {
+  const updateTodoItemUrl = (item: CardItem) => {
     item.url = '';
     setIsLoading(true);
 
@@ -234,7 +234,7 @@ const Home = () => {
     });
     };
 
-  const updateTodoItemHealth = (item: Card) => {
+  const updateTodoItemHealth = (item: CardItem) => {
     item.health = 0;
     setIsLoading(true);
 
@@ -251,7 +251,7 @@ const Home = () => {
     });
     };
 
-  const updateTodoItemAttack = (item: Card) => {
+  const updateTodoItemAttack = (item: CardItem) => {
     item.attack = 0;
     setIsLoading(true);
 
@@ -419,7 +419,7 @@ const Home = () => {
                 return (
                   <EachTodo
                     key={each.id}
-                    Card={each}
+                    CardItem={each}
                     deleteHandler={deleteTodoItem}
                     updateHandler={updateTodoItem}
                     archetypeHandler={updateTodoItemArchetype}
