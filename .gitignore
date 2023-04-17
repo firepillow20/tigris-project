@@ -110,3 +110,8 @@ dist
 next-env.d.ts
 *.vsidx
 *.vsidx
+.vs/slnx.sqlite
+*.sqlite
+.vs/tigris-project/v17/.wsuo
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
