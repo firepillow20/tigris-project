@@ -6,7 +6,7 @@ export class CardItem implements TigrisCollectionType {
 	id!: number;
 
 	@PrimaryKey({ order: 2 })
-	@SearchField({ sort: true })
+	@SearchField()
 	text!: string;
 
 	@Field()
@@ -16,7 +16,7 @@ export class CardItem implements TigrisCollectionType {
 	art!: boolean;
 
 	@Field()
-	@SearchField({ sort: true })
+	@SearchField()
 	archetype!: string;
 
 	@Field()
