@@ -1,6 +1,6 @@
 import { Tigris } from '@tigrisdata/core';
 import { loadEnvConfig } from '@next/env';
-import { CardItem } from '../db/models/cardItems';
+import { Card } from '../db/models/cards';
 
 // Run the config loader only when not executing within next runtime
 if (process.env.NODE_ENV === undefined) {
@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === undefined) {
 async function main() {
   // setup client and register schemas
   const tigrisClient = new Tigris();
-  await tigrisClient.registerSchemas([CardItem]);
+  await tigrisClient.registerSchemas([Card]);
 }
 
 main();
