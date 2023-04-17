@@ -1,7 +1,7 @@
-import { Field, PrimaryKey, SearchField, TigrisCollection, TigrisCollectionType, TigrisDataTypes } from '@tigrisdata/core';
+import { Field, PrimaryKey, SearchField, TigrisCollection, TigrisSearchIndex, TigrisCollectionType, TigrisDataTypes } from '@tigrisdata/core';
 
-@TigrisCollection('cards')
-export class Card implements TigrisCollectionType {
+@TigrisSearchIndex("cards")
+export class Card implements TigrisSearchIndex{
 	@PrimaryKey(TigrisDataTypes.INT32, { order: 1, autoGenerate: true })
 	id!: number;
 
