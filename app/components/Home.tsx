@@ -31,16 +31,17 @@ const Home = () => {
   // Todo list array which displays the todo items
   const [todoList, setTodoList] = useState<CardItem[]>([]);
 
-  // Loading and Error flags for the template
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-
   // This is use to animate the input text field
   const [wiggleError, setWiggleError] = useState(false);
 
   // Two separate views. 1. List view for todo items & 2. Search result view
   type viewModeType = 'list' | 'search';
   const [viewMode, setViewMode] = useState<viewModeType>('list');
+
+  // Keep track of status
+  type FetchStatus = 'loading' | 'success' | 'error';
+  const [fetchStatus, setFetchStatus] = useState<FetchStatus>('success');
+
 
   // Fetch Todo List
   /*
@@ -50,23 +51,21 @@ const Home = () => {
    If the 'result' key is present we safely set the 'todoList'.
   */
   const fetchListItems = () => {
-    setIsLoading(true);
-    setIsError(false);
+    setFetchStatus('loading');
 
     fetch('/api/items')
       .then(response => response.json())
       .then(data => {
-        setIsLoading(false);
+        setFetchStatus('success');
         if (data.result) {
           setViewMode('list');
           setTodoList(data.result);
         } else {
-          setIsError(true);
+          setFetchStatus('error')
         }
       })
       .catch(() => {
-        setIsLoading(false);
-        setIsError(true);
+          setFetchStatus('error')
       });
   };
 
@@ -84,7 +83,7 @@ const Home = () => {
     if (queryCheckWiggle()) {
       return;
     }
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/items', {
       method: 'POST',
@@ -95,7 +94,7 @@ const Home = () => {
             archetype: archetypeInput
         })
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       setTextInput('');
       setArchetypeInput('');
       setHealthInput('');
@@ -113,12 +112,12 @@ const Home = () => {
   It calls the endpoint 'api/item/<id>' with the 'DELETE' method. Read the method 'handleDelete' under pages/api/item/[id]' to learn more how the api handles deletion.
   */
   const deleteTodoItem = (id?: number) => {
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + id, {
       method: 'DELETE'
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -134,13 +133,13 @@ const Home = () => {
   */
   const updateTodoItem = (item: CardItem) => {
     item.completed = !item.completed;
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
       method: 'PUT',
       body: JSON.stringify(item)
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -151,13 +150,13 @@ const Home = () => {
 
   const updateTodoItemArt = (item: CardItem) => {
     item.art = !item.art;
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
       method: 'PUT',
       body: JSON.stringify(item)
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -168,13 +167,13 @@ const Home = () => {
 
   const updateTodoItemArchetype = (item: CardItem) => {
     item.archetype = '';
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
       method: 'PUT',
       body: JSON.stringify(item)
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -185,13 +184,13 @@ const Home = () => {
 
   const updateTodoItemCost = (item: CardItem) => {
     item.cost = '';
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
       method: 'PUT',
       body: JSON.stringify(item)
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -202,13 +201,13 @@ const Home = () => {
 
   const updateTodoItemEffects = (item: CardItem) => {
     item.effects = '';
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
       method: 'PUT',
       body: JSON.stringify(item)
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -219,13 +218,13 @@ const Home = () => {
 
   const updateTodoItemUrl = (item: CardItem) => {
     item.url = '';
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
       method: 'PUT',
       body: JSON.stringify(item)
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -236,13 +235,13 @@ const Home = () => {
 
   const updateTodoItemHealth = (item: CardItem) => {
     item.health = 0;
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
       method: 'PUT',
       body: JSON.stringify(item)
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -253,13 +252,13 @@ const Home = () => {
 
   const updateTodoItemAttack = (item: CardItem) => {
     item.attack = 0;
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
       method: 'PUT',
       body: JSON.stringify(item)
     }).then(() => {
-      setIsLoading(false);
+      setFetchStatus('success');
       if (viewMode == 'list') {
         fetchListItems();
       } else {
@@ -279,14 +278,14 @@ const Home = () => {
     if (queryCheckWiggle()) {
       return;
     }
-    setIsLoading(true);
+    setFetchStatus('loading');
 
     fetch(`/api/items/search?q=${encodeURI(textInput)}`, {
       method: 'GET'
     })
       .then(response => response.json())
       .then(data => {
-        setIsLoading(false);
+        setFetchStatus('success');
         if (data.result) {
           setViewMode('search');
           setTodoList(data.result);
@@ -388,8 +387,8 @@ const Home = () => {
         {/* Results section */}
         <div className="results">
           {/* Loader, Errors and Back to List mode */}
-          {isError && <p className="errorText">Something went wrong.. </p>}
-          {isLoading && <LoaderWave />}
+          {fetchStatus === 'error' && <p className="errorText">Something went wrong.. </p>}
+          {fetchStatus === 'loading' && <LoaderWave />}
           {viewMode == 'search' && (
             <button
               className="clearSearch"
