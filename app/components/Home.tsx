@@ -92,7 +92,7 @@ const Home = () => {
             url: urlInput,
             text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput,
             completed: false,
-            archetype: archetypeInput,
+            archetype: archetypeInput
         })
     }).then(() => {
       setIsLoading(false);
