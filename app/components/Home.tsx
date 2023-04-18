@@ -6,6 +6,8 @@ import EachTodo from './EachToDo';
 import LoaderWave from './LoaderWave';
 import { CardItem } from '../../db/models/cardItems';
 
+type FetchStatus = 'loading' | 'success' | 'error';
+type viewModeType = 'list' | 'search';
 const Home = () => {
   // This is the input field
   const [textInput, setTextInput] = useState('');
@@ -35,11 +37,9 @@ const Home = () => {
   const [wiggleError, setWiggleError] = useState(false);
 
   // Two separate views. 1. List view for todo items & 2. Search result view
-  type viewModeType = 'list' | 'search';
   const [viewMode, setViewMode] = useState<viewModeType>('list');
 
   // Keep track of status
-  type FetchStatus = 'loading' | 'success' | 'error';
   const [fetchStatus, setFetchStatus] = useState<FetchStatus>('success');
 
 
