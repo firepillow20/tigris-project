@@ -2,6 +2,7 @@ import {
 	Field,
 	PrimaryKey,
 	TigrisCollection,
+	SearchField,
 	TigrisCollectionType,
 	TigrisDataTypes
 } from '@tigrisdata/core';
