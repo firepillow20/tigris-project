@@ -146,126 +146,7 @@ const Home = () => {
         searchQuery();
       }
     });
-    };
-
-  const updateTodoItemArt = (item: CardItem) => {
-    item.art = !item.art;
-    setFetchStatus('loading');
-
-    fetch('/api/item/' + item.id, {
-      method: 'PUT',
-      body: JSON.stringify(item)
-    }).then(() => {
-      setFetchStatus('success');
-      if (viewMode == 'list') {
-        fetchListItems();
-      } else {
-        searchQuery();
-      }
-    });
-    };
-
-  const updateTodoItemArchetype = (item: CardItem) => {
-    item.archetype = '';
-    setFetchStatus('loading');
-
-    fetch('/api/item/' + item.id, {
-      method: 'PUT',
-      body: JSON.stringify(item)
-    }).then(() => {
-      setFetchStatus('success');
-      if (viewMode == 'list') {
-        fetchListItems();
-      } else {
-        searchQuery();
-      }
-    });
-    };
-
-  const updateTodoItemCost = (item: CardItem) => {
-    item.cost = '';
-    setFetchStatus('loading');
-
-    fetch('/api/item/' + item.id, {
-      method: 'PUT',
-      body: JSON.stringify(item)
-    }).then(() => {
-      setFetchStatus('success');
-      if (viewMode == 'list') {
-        fetchListItems();
-      } else {
-        searchQuery();
-      }
-    });
-    };
-
-  const updateTodoItemEffects = (item: CardItem) => {
-    item.effects = '';
-    setFetchStatus('loading');
-
-    fetch('/api/item/' + item.id, {
-      method: 'PUT',
-      body: JSON.stringify(item)
-    }).then(() => {
-      setFetchStatus('success');
-      if (viewMode == 'list') {
-        fetchListItems();
-      } else {
-        searchQuery();
-      }
-    });
-    };
-
-  const updateTodoItemUrl = (item: CardItem) => {
-    item.url = '';
-    setFetchStatus('loading');
-
-    fetch('/api/item/' + item.id, {
-      method: 'PUT',
-      body: JSON.stringify(item)
-    }).then(() => {
-      setFetchStatus('success');
-      if (viewMode == 'list') {
-        fetchListItems();
-      } else {
-        searchQuery();
-      }
-    });
-    };
-
-  const updateTodoItemHealth = (item: CardItem) => {
-    item.health = 0;
-    setFetchStatus('loading');
-
-    fetch('/api/item/' + item.id, {
-      method: 'PUT',
-      body: JSON.stringify(item)
-    }).then(() => {
-      setFetchStatus('success');
-      if (viewMode == 'list') {
-        fetchListItems();
-      } else {
-        searchQuery();
-      }
-    });
-    };
-
-  const updateTodoItemAttack = (item: CardItem) => {
-    item.attack = 0;
-    setFetchStatus('loading');
-
-    fetch('/api/item/' + item.id, {
-      method: 'PUT',
-      body: JSON.stringify(item)
-    }).then(() => {
-      setFetchStatus('success');
-      if (viewMode == 'list') {
-        fetchListItems();
-      } else {
-        searchQuery();
-      }
-    });
-    };
+ };
 
 
 
@@ -420,13 +301,6 @@ const Home = () => {
                     CardItem={each}
                     deleteHandler={deleteTodoItem}
                     updateHandler={updateTodoItem}
-                    archetypeHandler={updateTodoItemArchetype}
-                    healthHandler={updateTodoItemHealth}
-                    attackHandler={updateTodoItemAttack}
-                    urlHandler={updateTodoItemUrl}
-                    effectsHandler={updateTodoItemEffects}
-                    costHandler={updateTodoItemCost}
-                    artUpdateHandler={updateTodoItemArt}
                   />
                 );
               })}
