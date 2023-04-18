@@ -1,12 +1,12 @@
 {
-  "name": "tigris-nextjs13-starter-kit",
+  "name": "tigris-vercel-starter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "APP_ENV=development npm run setup",
+    "predev": "npm run setup",
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "APP_ENV=production npm run setup",
+    "postbuild": "npm run setup",
     "start": "next start",
     "lint": "next lint --max-warnings=0 .",
     "lint:fix": "eslint --fix .",
@@ -17,11 +17,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@next/font": "^13.0.0",
     "@tigrisdata/core": "latest",
-    "next": "^13.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
@@ -29,8 +28,8 @@
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "eslint": "8.25.0",
-    "eslint-config-next": "^13.0.0",
+    "eslint": "8.26.0",
+    "eslint-config-next": "12.3.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
