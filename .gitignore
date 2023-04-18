@@ -115,3 +115,4 @@ next-env.d.ts
 .vs/tigris-project/v17/.wsuo
 .vs/VSWorkspaceState.json
 .vs/slnx.sqlite
+*.sqlite
