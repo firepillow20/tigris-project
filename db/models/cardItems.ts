@@ -1,43 +1,48 @@
 import {
-	Field,
-	PrimaryKey,
-	TigrisCollection,
-	TigrisCollectionType,
-	TigrisDataTypes
+  Field,
+  PrimaryKey,
+  SearchField,
+  TigrisCollection,
+  TigrisCollectionType,
+  TigrisDataTypes
 } from '@tigrisdata/core';
 
 @TigrisCollection('cardItems')
 export class CardItem implements TigrisCollectionType {
-	@PrimaryKey(TigrisDataTypes.INT32, { order: 1, autoGenerate: true })
-	id!: number;
+  @PrimaryKey(TigrisDataTypes.INT32, { order: 1, autoGenerate: true })
+  id!: number;
 
-	@PrimaryKey({ order: 2 })
-	text!: string;
+  @SearchField()
+  @PrimaryKey({ order: 2 })
+  text!: string;
 
-	@Field()
-	completed!: boolean;
+  @Field()
+  completed!: boolean;
 
-	@Field()
-	art!: boolean;
+  @Field()
+  art!: boolean;
 
-	@Field()
-	archetype!: string;
+  @SearchField({ sort: true, facet: true })
+  @Field()
+  archetype!: string;
 
-	@Field()
-	status!: string;
+  @SearchField({ sort: true, facet: true })
+  @Field()
+  status!: string;
 
-	@Field()
-	url!: string;
+  @Field()
+  url!: string;
 
-	@Field()
-	health!: number;
+  @Field()
+  health!: number;
 
-	@Field()
-	attack!: number;
+  @Field()
+  attack!: number;
 
-	@Field()
-	cost!: string;
+  @Field()
+  cost!: string;
 
-	@Field()
-	effects!: string;
+  @SearchField({ sort: true, facet: true })
+  @Field()
+  effects!: string;
 }
