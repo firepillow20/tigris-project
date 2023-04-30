@@ -26,7 +26,7 @@ const EachTodo = ({ CardItem, deleteHandler, updateHandler, archetypeHandler, he
 
           }}
         >
-          <span>{cardItem.text + " | Archetype: " + cardItem.archetype + " | Stats: " + cardItem.attack + "/" + cardItem.health + " | Cost: " + cardItem.cost}</span>
+          <span>{CardItem.text + " | Archetype: " + CardItem.archetype + " | Stats: " + CardItem.attack + "/" + CardItem.health + " | Cost: " + CardItem.cost}</span>
         </button>
         <Image
             src={CardItem.url}

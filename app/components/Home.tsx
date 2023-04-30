@@ -89,7 +89,7 @@ const Home = () => {
       method: 'POST',
       body: JSON.stringify({
             url: urlInput,
-            text: textInput,
+            text: textInput
             completed: false,
             archetype: archetypeInput,
             attack: attackInput,
