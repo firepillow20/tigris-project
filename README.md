@@ -5,15 +5,14 @@
 [![Vercel][Vercel]][Vercel-url]
 [![Apache License][license-shield]][license-url]
 
-# ⚡ ️Tigris example app using Next.js 13 - Todo list
+# Database for the upcoming card game Nevenders
 
-A simple todo app built on [Next.js 13][Next-url] and [Tigris](https://docs.tigrisdata.com/) 
+A database app built on [Next.js 13][Next-url] and [Tigris](https://docs.tigrisdata.com/) 
 using [TypeScript client](https://docs.tigrisdata.com/typescript/), deployed on [Vercel][Vercel-url].
 
 #### Project demo
 
-<a href="https://tigris-nextjs13-starter-kit.vercel.app/">
-    <img src="public/readme/todo_app_screenshot.jpg" alt="Todo web app">
+<a href="https://tigris-nextjs13.vercel.app/">
 </a>
 
 https://tigris-nextjs13-starter-kit.vercel.app/
