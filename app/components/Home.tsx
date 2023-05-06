@@ -234,7 +234,7 @@ const Home = () => {
     };
 
   const updateTodoItemHealth = (item: CardItem) => {
-    item.health = 0;
+    item.health = '';
     setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
@@ -251,7 +251,7 @@ const Home = () => {
     };
 
   const updateTodoItemAttack = (item: CardItem) => {
-    item.attack = 0;
+    item.attack = '';
     setFetchStatus('loading');
 
     fetch('/api/item/' + item.id, {
