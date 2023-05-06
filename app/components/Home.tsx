@@ -90,7 +90,8 @@ const Home = () => {
       body: JSON.stringify({
             url: urlInput,
             text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput,
-            archetype: archetypeInput
+            archetype: archetypeInput,
+            attack: attackInput
         })
     }).then(() => {
       setFetchStatus('success');
