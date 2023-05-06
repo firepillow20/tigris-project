@@ -91,7 +91,7 @@ const Home = () => {
             url: urlInput,
             text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput,
             archetype: archetypeInput,
-            attack: attackInput
+            attack: Number(attackInput)
         })
     }).then(() => {
       setFetchStatus('success');
