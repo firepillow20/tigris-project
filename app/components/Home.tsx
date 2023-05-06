@@ -89,9 +89,11 @@ const Home = () => {
       method: 'POST',
       body: JSON.stringify({
             url: urlInput,
-            text: "Name: " + textInput + " | Archetype: " + archetypeInput + " | Stats: " + attackInput + "/" + healthInput + " | Cost: " + costInput,
+            text: textInput,
             archetype: archetypeInput,
-            attack: Number(attackInput)
+            attack: Number(attackInput),
+            health: Number(healthInput),
+            cost: costInput
         })
     }).then(() => {
       setFetchStatus('success');
