@@ -34,10 +34,10 @@ export class CardItem implements TigrisCollectionType {
   url!: string;
 
   @Field()
-  health!: string;
+  health!: number;
 
   @Field()
-  attack!: string;
+  attack!: number;
 
   @Field()
   cost!: string;
