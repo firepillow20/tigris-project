@@ -5,7 +5,6 @@ import { Tigris } from '@tigrisdata/core';
 import cards from '../../db/data/cards.json';
 
 const tigrisClient = new Tigris();
-const db = tigrisClient.getDatabase();
 const collection = tigrisDb.getCollection<CardItem>(CardItem);
 
 const CardSchema = z.object({
