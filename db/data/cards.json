@@ -1,0 +1,13 @@
+[
+  {
+    "text": "test1"
+  },
+  {
+    "text": "test2",
+    "archetype": "test3",
+    "url": "test4",
+    "attack": 1,
+    "health": 1,
+    "cost": "test5"
+  }
+]
