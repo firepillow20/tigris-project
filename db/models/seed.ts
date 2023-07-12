@@ -8,7 +8,7 @@ const tigrisClient = new Tigris();
 const db = tigrisClient.getDatabase();
 const collection = tigrisDb.getCollection<CardItem>(CardItem);
 
-const ArtistSchema = z.object({
+const CardSchema = z.object({
 	id: z.number(),
 	completed: z.boolean(),
 	art: z.boolean(),
@@ -22,9 +22,9 @@ const ArtistSchema = z.object({
 	cost: z.string()
 });
 
-async function insertArtists() {
+async function insertCards() {
 	const parsed: Array<CardItem> = cards.map((CardItem) => {
-		return ArtistSchema.parse({
+		return CardSchema.parse({
 			text: CardItem.text,
 			archetype: CardItem.archetype,
 			url: CardItem.url,
@@ -40,4 +40,4 @@ async function insertArtists() {
 	console.log(inserted);
 }
 
-insertArtists();
+insertCards();
